@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+	<div class="jumbotron text-center">
+	   <h1>Nos Clients</h1>
+	   <p class="">Voici la liste de nos clients</p>
+	</div>
+	<div class="row flex">
+				<div class="col-3">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">
+                              {{ property.nom}}
+							</h5>
+							<p class="card-text">{{ property.prenom }}</p>
+							<div class="text-primary">{{ property.adresse }}</div>
+							<div class="text-primary">{{ property.codePostal }}</div>
+						</div>
+					</div>
+				</div>
+		</div>		
+	</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+	<div class="jumbotron text-center">
+	   <h1>Liste de nos Clients</h1>
+	   <p></p>
+	</div>
+	<div class="row flex-row">
+			{% for property in properties %}
+				<div class="col-3">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">
+                                 <a href="{{ path('client',{'id':property.id}) }}">{{ property.nom}}</a>
+							</h5>
+							<p class="card-text">{{ property.prenom }}</p>
+							<div class="text-primary">{{ property.adresse }}</div>
+							<div class="text-primary">{{ property.codePostal }}</div>
+						</div>
+					</div>
+				</div>
+		</div>		
+	</div>
+{% endfor %}
+{% endblock %}
