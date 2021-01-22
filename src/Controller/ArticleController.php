@@ -79,14 +79,14 @@ class ArticleController extends AbstractController
 	}
 
      /**
-	*@Route("/client/{id}", name="client")
+	*@Route("/article/{id}", name="article")
 	*@return Response
 	*/
 	public function article($id): Response
 	{
                 //traitement
                 $property=$this->repository->find($id);
-        return $this->render('client/clients.html.twig',['current_menu'=>'listearticles','property'=>$property]);
+        return $this->render('article/articles.html.twig',['current_menu'=>'listearticles','property'=>$property]);
 	}
 
 

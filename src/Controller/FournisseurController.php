@@ -17,7 +17,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 class FournisseurController extends AbstractController
 {
     /**
-	* @var ClientRepository
+	* @var FournisseurRepository
 	*/
 	private $repository;
 
@@ -41,7 +41,7 @@ class FournisseurController extends AbstractController
     }
     
  /**
-	*@Route("/listeclients", name="listeclients")
+	*@Route("/listefournisseurs", name="listefournisseurs")
 	*@return Response
 	*/
 	public function listefournisseurs(Request $request): Response
@@ -79,14 +79,14 @@ class FournisseurController extends AbstractController
 	}
 
      /**
-	*@Route("/fournisseur/{id}", name="client")
+	*@Route("/fournisseur/{id}", name="fournisseur")
 	*@return Response
 	*/
 	public function fournisseur($id): Response
 	{
                 //traitement
                 $property=$this->repository->find($id);
-        return $this->render('fournisseur/fournisseurs.html.twig',['current_menu'=>'listefournisseur','property'=>$property]);
+        return $this->render('fournisseur/fournisseurs.html.twig',['current_menu'=>'listefournisseurs','property'=>$property]);
 	}
 
 }
